@@ -1,6 +1,6 @@
 # track_task
-simple tracker for registration work time
-Простой трекер для регистрации времени фактической работы
+simple tracker for registration work time.
+Простой трекер для регистрации времени фактической работы.
 
 
 ## Параметры и примеры использования
@@ -14,15 +14,16 @@ options:
   --min MIN          Рабочее время потраченое на проект, в минутах
   --days DAYS        Период вывода статистики, в днях (N-последних дней)
 
-### Для внесения сведений о потраченом времени
-$ python3 track.py track --project=python --min=44
-$ python3 track.py track --project=project --min=45
-$ python3 track.py track --project=project5 --min=78
-$ python3 track.py track --project=project --min=32
-$ python3 track.py track --project=project15 --min=88
+### Для внесения сведений о потраченом времен
+/$ python3 track.py track --project=python --min=44
+/$ python3 track.py track --project=project --min=45
+/$ python3 track.py track --project=project5 --min=78
+/$ python3 track.py track --project=project --min=32
+/$ python3 track.py track --project=project15 --min=88
+
 
 ### Для получения статистики
-$ python3 track.py stat --project=python --days=5
+/$ python3 track.py stat --project=python --days=5
 09.06 05h 11m
 09.05 00h 38m
 09.04 01h 16m
