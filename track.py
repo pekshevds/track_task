@@ -7,16 +7,20 @@ class Action(Enum):
     track = 'track'
     stat = 'stat'
 
+    def __str__(self) -> str:
+        return self.value
+
 def init_parser():
     """
     parser initialization
     """
-    parser = argparse.ArgumentParser(description="Трекинг времени на разные проекты")
+    parser = argparse.ArgumentParser(description="simple tracker for registration work time.")
     
-    parser.add_argument('action', help='Возможные действия [track - для регистрации времени работы (указывается в параметре --min), stat - для вывода статистики за период (указывается в параметре --days)]', choices=list(Action), type=Action)
-    parser.add_argument('--project', help='Имя проекта')
-    parser.add_argument('--min', type=int, help='Рабочее время потраченое на проект, в минутах', default=15)
-    parser.add_argument('--days', type=int, help='Период вывода статистики, в днях (N-последних дней)', default=5)
+    parser.add_argument('action', help="use 'track' - to registration work time, 'stat' - to view statistics", 
+        choices=list(Action), type=Action)
+    parser.add_argument('--project', type=str, help='project name')
+    parser.add_argument('--min', type=int, help='spent time in minutes', default=15)
+    parser.add_argument('--days', type=int, help='statistics period in days', default=5)
     return parser
 
 def show_statistic_data(statistic_data = []):

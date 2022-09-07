@@ -4,17 +4,26 @@ import itertools
 
 import config
 
+
 def read_records_from_database():
     """
     it reads all data in a file
     """
-
-    file = open(config.DATABASE_DATA_NAME, mode='r', encoding="utf-8")
+    
+    records = []
+    
+    try:
+        file = open(config.DATABASE_DATA_NAME, mode='r', encoding="utf-8")
+    except FileNotFoundError:        
+        file = open(config.DATABASE_DATA_NAME, mode='w', encoding="utf-8")
+        file.close()
+        return records
     
     try:
         records = json.loads(file.read())
     except:
-        records = []
+        return records
+
     return records
 
 
