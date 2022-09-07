@@ -1,0 +1,1 @@
+DATABASE_DATA_NAME = 'database.json'
