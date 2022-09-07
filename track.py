@@ -69,7 +69,6 @@ def show_statistic_data(statistic_data = []):
 
 if __name__ == "__main__":
     
-    #Инициализируем парсер
     init_parser()
 
     args = vars(parser.parse_args())
